@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-family: sans-serif;
+        }
+
+        /* .gameScreen {
+            display: none;
+        } */
+
+        .mainScreen {
+            max-width: 1000px;
+            /* display: flex; */
+            flex-direction: column;
+            gap: .5rem;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button {
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .input {
+            min-width: 187px;
+            padding: .5rem;
+            border-radius: 10px;
+            border: 5px solid gray;
+            background-color: rgb(196, 196, 196);
+        }
+
+        .instructions {
+            /* display: flex; */
+            padding: 20px;
+            background-color: gray;
+            border-radius: 10px;
+            color: white
+        }
+
+        .closeInstruction {
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            color: white;
+            background-color: red;
+            border-radius: 10px;
+            border: none;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="display: flex; flex-direction: row; gap: 1rem;">
+            <div class="mainScreen" id="mainScreen" style="display: flex">
+                <img src="./assets/shooter.png">
+                <input id="inputUsn" class="input" placeholder="Input Username">
+                <select class="input" id="inputLevel">
+                    <option disabled selected hidden>Select Level</option>
+                    <option value="30">Easy</option>
+                    <option value="20">Normal</option>
+                    <option value="15">Hard</option>
+                </select>
+                <div style="display:flex; gap: .7rem;">
+                    <div class="flex-col">
+                        <label for="gun1"><img height="50" src="./assets/gun1.png"></label>
+                        <input type="radio" name="gunSelect" value="gun1" id="gun1">
+                    </div>
+                    <div class="flex-col">
+                        <label for="gun2"><img height="50" src="./assets/gun2.png"></label>
+                        <input type="radio" name="gunSelect" value="gun2" id="gun2">
+                    </div>
+                </div>
+                <div style="display:flex; gap: .7rem;">
+                    <div class="flex-col">
+                        <label for="target1"><img height="50" src="./assets/target1.png"></label>
+                        <input type="radio" name="targetSelect" value="target1" id="target1">
+                    </div>
+                    <div class="flex-col">
+                        <label for="target2"><img height="50" src="./assets/target2.png"></label>
+                        <input type="radio" name="targetSelect" value="target2" id="target2">
+                    </div>
+                    <div class="flex-col">
+                        <label for="target3"><img height="50" src="./assets/target3.png"></label>
+                        <input type="radio" name="targetSelect" value="target3" id="target3">
+                    </div>
+                </div>
+
+                <div style="display:flex; gap: .7rem;">
+                    <button id="playGameButton" class="button" style="background-color: green;">Play Game</button>
+                    <button id="instructionButton" class="button" style="background-color: brown;">Instructions</button>
+                </div>
+            </div>
+            <div id="instructionsBox" class="instructions" style="display: none">
+                <ol>
+                    <li>Input username</li>
+                    <li>Point the pointer at the target</li>
+                    <li>Click to shoot</li>
+                    <li>Get as many points as possible</li>
+                    <li>Enjoy!</li>
+                </ol>
+                <button id="instructionsBoxClose" class="closeInstruction">X</button>
+            </div>
+        </div>
+    </div>
+    <div class="gameScreen" style="display: none;" id="gameScreen">
+        <canvas id="game" width="1000" height="600"></canvas>
+    </div>
+    <script src="./game.js"></script>
+</body>
+
+</html>
