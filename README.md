@@ -1,1 +1,4 @@
 # america-simulator
+
+todo: 
+- lederbor
